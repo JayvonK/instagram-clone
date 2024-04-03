@@ -10,9 +10,9 @@ export default function App() {
 
     <View style={styles.container}>
       <NavbarComponent />
-      {/* <StoriesComponent />
+      <StoriesComponent />
       <PostComponent />
-      <FooterComponent /> */}
+      <FooterComponent />
     </View>
   );
 }

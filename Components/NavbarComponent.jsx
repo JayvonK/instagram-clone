@@ -31,7 +31,8 @@ const NavbarComponent = () => {
 
 const Style = StyleSheet.create({
     HeaderContainer: {
-        marginTop: 50,
+        marginTop: 45,
+        paddingLeft: 10,
         flexDirection: "row",
         justifyContent: "space-between",
         alignItems: "center",
