@@ -10,7 +10,6 @@ export default function App() {
 
     <View style={styles.container}>
       <NavbarComponent />
-      <StoriesComponent />
       <PostComponent />
       <FooterComponent />
     </View>
