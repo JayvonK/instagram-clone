@@ -14,15 +14,15 @@ const PostComponent = () => {
     {
       ProfilePicture: pfp1,
       Username: "Mr. Bowler",
-      Image: guy,
+      Image: cat,
       NumOfLikes: "9,999",
       Description: "Look at this Cool cat! So Inspiring!",
       Comments: [{ UserWhoCommented: "caterpop_89", UsersComment: "Das me!" }],
     },
     {
-      ProfilePicture: cat,
+      ProfilePicture: figma,
       Username: "caterpop_89",
-      Image: figma,
+      Image: guy,
       NumOfLikes: "6,545",
       Description: "FOR FREE L O L XD??? Follow my boy on twitch!",
       Comments: [
@@ -54,23 +54,72 @@ const PostComponent = () => {
                 <Text style={Styles.DotsText}>.</Text>
               </View>
             </View>
+
             {/* This div will be for our Post Image */}
             <View>
-              <Image style={Styles.ImagePost} source={post.Image}/>
+              <Image style={Styles.ImagePost} source={post.Image} />
             </View>
+
             {/* This will be our Icons Div and Likes Parent Div */}
-            <View style={{flexDirection: "row"}}>
+            <View style={{ flexDirection: "row" }}>
               {/* This will be our icons div */}
-              <View style={{flex: 1, flexDirection: "row", paddingRight: 5, paddingLeft: 14, paddingTop: 10}}>
-                <FontAwesomeIcon icon={faHeart} style={{ color: "white", marginRight: 20 }} size={25}/>
-                <FontAwesomeIcon icon={faComment} style={{ color: "white", marginRight: 20, transform: [{rotateY: '180deg'}] }} size={25}/>
-                <FontAwesomeIcon icon={faPaperPlane} style={{ color: "white", marginRight: 20 }} size={25}/>
+              <View style={{ flex: 1, flexDirection: "row", paddingRight: 5, paddingLeft: 14, paddingTop: 10 }}>
+                <FontAwesomeIcon icon={faHeart} style={{ color: "white", marginRight: 20 }} size={25} />
+                <FontAwesomeIcon icon={faComment} style={{ color: "white", marginRight: 20, transform: [{ rotateY: '180deg' }] }} size={25} />
+                <FontAwesomeIcon icon={faPaperPlane} style={{ color: "white", marginRight: 20 }} size={25} />
               </View>
-                <View style={{flex: 1, alignItems: "flex-end", paddingRight: 14, justifyContent: "center", paddingTop: 10}}>
-                <FontAwesomeIcon icon={faBookmark} style={{ color: "white", marginRight: 20 }} size={25}/>
-                </View>
+              <View style={{ flex: 1, alignItems: "flex-end", paddingRight: 14, justifyContent: "center", paddingTop: 10 }}>
+                <FontAwesomeIcon icon={faBookmark} style={{ color: "white", marginRight: 20 }} size={25} />
+              </View>
             </View>
+
+            {/* Likes Div */}
+            <View>
+              <Text style={{ color: "white", paddingLeft: 14, paddingTop: 5, fontWeight: "bold", }}>
+                {post.NumOfLikes} Likes
+              </Text>
+            </View>
+
+            {/* Post Description Div */}
+            <View style={{ flex: 1, flexDirection: "row" }}>
+              <Text style={{ color: "white", fontWeight: "bold", paddingLeft: 14, paddingTop: 5, paddingRight: 5 }}>
+                {post.Username}
+              </Text>
+              <Text style={{ color: "white", paddingTop: 5, }}>
+                {post.Description}
+              </Text>
+            </View>
+
+            {
+              post.Comments.map((comment, idx) => {
+                return (
+                  <View key={idx} style={{ flex: 1, flexDirection: "row" }}>
+                    <Text style={{ color: "white", fontWeight: "bold", paddingLeft: 14, paddingTop: 5, paddingRight: 5 }}>
+                      {comment.UserWhoCommented}
+                    </Text>
+                    <Text style={{ color: "white", paddingTop: 5, }}>
+                      {comment.UsersComment}
+                    </Text>
+                  </View>
+                )
+              })
+            }
+
+            {/* Add Comment Section for user */}
+            <View style={{ flex: 1, flexDirection: "row" }}>
+              <Image source={pfp1} style={{ height: 30, width: 30, borderRadius: 50, marginTop: 10, marginLeft: 13 }} />
+              <Text style={{ color: "gainsboro", paddingLeft: 14, alignSelf: "center", paddingTop: 8 }}>Add a comment...</Text>
+            </View>
+
+            {/* Date of our Post */}
+            <View>
+              <Text style={{color: "gainsboro", paddingLeft: 14, paddingTop: 6}}>12 Hours ago</Text>
+            </View>
+
+
           </View>
+
+
         );
       })}
     </ScrollView>
