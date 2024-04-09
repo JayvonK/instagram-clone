@@ -3,6 +3,7 @@ import React from 'react';
 import pfp1 from '../assets/pexels-anna-shvets-5952932.jpg';
 
 const StoriesComponent = () => {
+
   return (
     <ScrollView horizontal style={Styles.ScrollStyle}>
       <Image source={pfp1} style={Styles.ImageStyle}/>
